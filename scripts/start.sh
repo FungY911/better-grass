@@ -30,7 +30,11 @@ sudo apt install npm
 
 # Install pm2
 echo Installing PM2 that will let the app run forever and restart automatically when it crashses
-sudo npm install pm2
+sudo npm install -g pm2
+
+# Install all dependencies
+echo Installing all dependencies
+npm install
 
 # Start the app
 echo Starting the app...
