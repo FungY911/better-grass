@@ -44,7 +44,6 @@ const performHttpRequest = async (params) => {
     localAddress: params.device_ip,
     encoding: "base64",
     cookieJar: cookieJars[params.session_id],
-    http2: true,
     maxHeaderSize: 49152,
   });
   const gotFetch = createFetch(extendedGot);
