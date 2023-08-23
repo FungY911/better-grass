@@ -14,8 +14,8 @@ echo Note: Declaring multiple User IDs is possible by separating each ID with a 
 read -p "User ID/s: " user_ids_var
 
 # Set the environment variables
-sed -i "" "s/USER_IDS=/USER_IDS=$user_ids_var/g" $LOCAL_DIR/.env
-sed -i "" "s/NODE_ENV=/NODE_ENV=production/g" $LOCAL_DIR/.env
+sed -i "s/USER_IDS=/USER_IDS=$user_ids_var/g" $LOCAL_DIR/.env
+sed -i "s/NODE_ENV=/NODE_ENV=production/g" $LOCAL_DIR/.env
 
 # Install git
 echo Installing git that will be used for automatic updates
