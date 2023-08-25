@@ -15,11 +15,28 @@ do
   then
     interface="$base_interface:$index"
 
-    # Delete the old interface with base interface name
-    ip address del "$ip_address" dev "$base_interface"
+    while true
+    do
+      # Delete the old interface with base interface name
+      ip address del "$ip_address" dev "$base_interface"
+
+      # Check if the delete function was successful
+      if [ $? -eq 0 ]; then
+        break
+      else
+        echo "Retrying to replace $ip_address"
+      fi
+
+      sleep 1
+    done
+
+    sleep 1
 
     # Add new interface with broadcast and sub interface
+    echo "Adding a new interface for $ip_address"
     ip address add "$ip_address" broadcast "$broadcast_address" dev "$base_interface" label "$interface"
+
+    sleep 1
 
     # Bring up the new interface
     ip link set "$interface" up
