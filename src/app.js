@@ -9,7 +9,7 @@ const { CookieJar } = require("tough-cookie");
 const {
   NAMESPACE,
   USER_IDS,
-  WEBSOCKET_URL,
+  WEBSOCKET_URLS,
   PING_INTERVAL,
   USER_AGENT,
   COOKIE_JAR_LIFESPAN,
@@ -19,6 +19,7 @@ const getUnixTimestamp = () => Math.floor(Date.now() / 1000);
 
 let websockets = {};
 let cookieJars = {};
+let retries = 0;
 let lastLiveConnectionTimestamp = getUnixTimestamp();
 const appRoot = path.resolve(__dirname);
 
@@ -100,7 +101,9 @@ const performHttpRequest = async (params) => {
 };
 
 const initialize = (ipAddress, userId) => {
-  const websocket = new WebSocket(WEBSOCKET_URL, {
+  const websocketUrl = WEBSOCKET_URLS[retries % WEBSOCKET_URLS.length];
+
+  const websocket = new WebSocket(websocketUrl, {
     localAddress: ipAddress,
     ca:
       process.env.NODE_ENV === "production"
@@ -143,6 +146,7 @@ const initialize = (ipAddress, userId) => {
   });
 
   websocket.on("error", (error) => {
+    retries++;
     console.error(ipAddress, "[ERROR]", error);
   });
 

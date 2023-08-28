@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "App that connects all IP addresses on a server to the proxy server",
   "main": "app.js",
-  "scripts": {
+  "engines": {
     "npm": "8.19.2",
     "node": "v19.0.0",
     "pm2": "5.3.0"
