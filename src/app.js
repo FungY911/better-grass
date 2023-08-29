@@ -14,6 +14,7 @@ const {
   USER_AGENT,
   COOKIE_JAR_LIFESPAN,
 } = require("./constants");
+const { prettifyHeaderKey } = require("./utils");
 
 const getUnixTimestamp = () => Math.floor(Date.now() / 1000);
 
@@ -46,6 +47,20 @@ const performHttpRequest = async (params) => {
     encoding: "base64",
     cookieJar: cookieJars[params.session_id],
     maxHeaderSize: 49152,
+    hooks: {
+      beforeRequest: [
+        (options) => {
+          let headers = {};
+
+          for (const [key, value] of Object.entries(options.headers)) {
+            const prettifiedHeader = prettifyHeaderKey(key);
+            headers[prettifiedHeader] = value;
+          }
+
+          options.headers = headers;
+        },
+      ],
+    },
   });
   const gotFetch = createFetch(extendedGot);
 
