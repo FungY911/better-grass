@@ -4,7 +4,7 @@ require("dotenv").config();
 module.exports = {
   apps: [
     {
-      name: "grass-vps-app",
+      name: "grass-cli",
       script: "./src/app.js",
       node_args: ["--max-http-header-size=1073741824"],
       env: {
