@@ -24,4 +24,4 @@ If you ever experience issues, please [join our discord](https://discord.gg/8Nxz
 ## Useful links
 
 - [Grass landing page](https://www.getgrass.io)
-- [Grass dashboard](https://app.getgrass.io)
+- [Grass dashboard](https://app.getgrass.io/register/?referralCode=7WfvhuMPb4I1plY)
