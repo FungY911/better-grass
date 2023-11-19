@@ -22,10 +22,11 @@ Linux systems have labels for IP addresses and you can check that by using the `
 If you ever experience issues, please [join our discord](https://discord.gg/vtM9963QT8) and open a ticket.
 # How to get user ID
 0. Open inspector by right click or press F12 on app.getgrass.io
+0. Go to Application, If you dont see them, resize the window or click on the arrows pointing to the right, upper in the inspector
 ![image](https://github.com/FungY911/better-grass/assets/74965749/0b8b31b7-57d8-49d2-b945-31b895a49e62)
-1. Click on https://app.getgrass.io/
-2. Click on key userId
-3. Copy the value - This is your userId
+2. Click on https://app.getgrass.io/
+3. Click on key userId
+4. Copy the value - This is your userId
 
 ## Useful links
 
