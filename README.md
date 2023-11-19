@@ -20,6 +20,11 @@ Linux systems have labels for IP addresses and you can check that by using the `
 3. It should now run the app. Check your dashboard app to see if the IP addresses are starting to reflect.
 
 If you ever experience issues, please [join our discord](https://discord.gg/vtM9963QT8) and open a ticket.
+# How to get user ID
+![image](https://github.com/FungY911/better-grass/assets/74965749/0b8b31b7-57d8-49d2-b945-31b895a49e62)
+1. Click on https://app.getgrass.io/
+2. Click on key userId
+3. Copy the value - This is your userId
 
 ## Useful links
 
