@@ -34,3 +34,6 @@ If you ever experience issues, please [join our discord](https://discord.gg/vtM9
 
 - [Grass landing page](https://www.getgrass.io)
 - [Grass dashboard](https://app.getgrass.io/register/?referralCode=7WfvhuMPb4I1plY)
+
+## Help
+If you need help, fill the form and create the issue - [click me](https://github.com/FungY911/better-grass/issues)
