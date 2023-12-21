@@ -2,6 +2,11 @@
 
 Grass app that can be ran on VPS machines. It can detect all network interfaces automatically.
 
+# Note!
+
+- If you are getting messages that sometimes will disconnect you, that's okay.
+- If in your dashboard does not saying online, everything works. If you feel that not, try to contact me via issues.
+
 ## Before you start
 
 #### 1. Check if you have some of the dependencies already
