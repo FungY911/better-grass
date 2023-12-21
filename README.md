@@ -1,6 +1,13 @@
-# Grass VPS App
+![Downloads - Total](https://img.shields.io/github/downloads/FungY911/better-grass/total?style=for-the-badge)
+![Downloads - Latest](https://img.shields.io/github/downloads/FungY911/better-grass/latest/total?style=for-the-badge)
+![Build](https://img.shields.io/github/actions/workflow/status/FungY911/better-grass/maven.yml?style=for-the-badge)
+![Contributors](https://img.shields.io/github/contributors-anon/FungY911/better-grass?style=for-the-badge)
+![Version](https://img.shields.io/github/v/tag/FungY911/better-grass?style=for-the-badge)
 
-Grass app that can be ran on VPS machines. It can detect all network interfaces automatically.
+# Grass App Supported Platforms
+
+❌ - Windows
+✅ - Ubuntu 22.04
 
 # Note!
 
