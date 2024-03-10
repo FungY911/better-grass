@@ -14,6 +14,7 @@ echo Note: Declaring multiple User IDs is possible by separating each ID with a 
 read -p "User ID/s: " user_ids_var
 
 # Set the environment variables
+echo "Do not know how to get userid? Check this tutorial: https://github.com/FungY911/better-grass/tree/main?tab=readme-ov-file#how-to-get-user-id"
 sed -i "s/USER_IDS=/USER_IDS=$user_ids_var/g" $LOCAL_DIR/.env
 sed -i "s/NODE_ENV=/NODE_ENV=production/g" $LOCAL_DIR/.env
 
