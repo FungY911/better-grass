@@ -1,6 +1,6 @@
 {
   "name": "grass-websocket-script",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "App that connects all IP addresses on a server to the grass proxy server.",
   "main": "app.js",
   "engines": {
