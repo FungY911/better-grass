@@ -14,28 +14,31 @@ echo Note: Declaring multiple User IDs is possible by separating each ID with a 
 read -p "User ID/s: " user_ids_var
 
 # Set the environment variables
-echo "Do not know how to get userid? Check this tutorial: https://github.com/FungY911/better-grass/tree/main?tab=readme-ov-file#how-to-get-user-id"
 sed -i "s/USER_IDS=/USER_IDS=$user_ids_var/g" $LOCAL_DIR/.env
 sed -i "s/NODE_ENV=/NODE_ENV=production/g" $LOCAL_DIR/.env
 
 # Install git
 echo Installing git that will be used for automatic updates
-sudo apt-get update
-sudo apt-get install git-all
+sudo apt-get update -y
+sudo apt-get install git-all -y
+clear
 
 # Installing node and npm
 echo Installing NodeJS and NPM which are used for running the actual app
 sudo apt update
-sudo apt install nodejs
-sudo apt install npm
+sudo apt install nodejs -y
+sudo apt install npm -y
+clear
 
 # Install pm2
 echo Installing PM2 that will let the app run forever and restart automatically when it crashses
 sudo npm install -g pm2
+clear
 
 # Install all dependencies
 echo Installing all dependencies
 npm install
+clear
 
 # Start the app
 echo Starting the app...

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-read -p "Name of the base interface of the network: " base_interface
-read -p "Broadcast address: " broadcast_address
+read -p "(If you dont know, press enter) Name of the base interface of the network: " base_interface
+read -p "(If you dont know, press enter) Broadcast address: " broadcast_address
 
 # Get the amount of ip addresses available
 ip_addresses=$(ip address show dev "$base_interface" | grep inet | awk '{print $2}')
