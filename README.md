@@ -1,4 +1,4 @@
-![Build](https://img.shields.io/github/actions/workflow/status/FungY911/better-grass/actions/workflows/npm-publish-github-packages.yml?style=for-the-badge)
+[![Node.js Package](https://github.com/FungY911/better-grass/actions/workflows/npm-publish-github-packages.yml/badge.svg)](https://github.com/FungY911/better-grass/actions/workflows/npm-publish-github-packages.yml)
 ![Contributors](https://img.shields.io/github/contributors-anon/FungY911/better-grass?style=for-the-badge)
 ![Version](https://img.shields.io/github/v/tag/FungY911/better-grass?style=for-the-badge)
 
