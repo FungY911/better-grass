@@ -28,6 +28,7 @@ const sleep = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
+console.log("[❗] Initializing...");
 const performHttpRequest = async (params) => {
   const sessionHasCookieJar = !!cookieJars[params.session_id];
 
@@ -173,7 +174,7 @@ const initialize = (ipAddress, userId) => {
     try {
       parsed_message = JSON.parse(data);
     } catch (e) {
-      console.error(ipAddress, "Could not parse WebSocket message!", data);
+      console.error(ipAddress, "[❗] Could not parse WebSocket message!", data);
       console.error(e);
       return;
     }
@@ -196,7 +197,7 @@ const initialize = (ipAddress, userId) => {
       } catch (err) {
         console.error(
           ipAddress,
-          `RPC action ${parsed_message.action} encountered error: `,
+          `[❗] RPC action ${parsed_message.action} encountered error: `,
           err
         );
       }
@@ -228,9 +229,9 @@ const initialize = (ipAddress, userId) => {
       current_timestamp - lastLiveConnectionTimestamp;
 
     if (seconds_since_last_live_message > 29 || websocket.readyState === 3) {
-      console.error(
+      console.log(
         ipAddress,
-        "WebSocket does not appear to be live! Restarting the WebSocket connection..."
+        "[❗] WebSocket does not appear to be live! Restarting the WebSocket connection..."
       );
 
       try {
