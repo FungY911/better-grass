@@ -10,7 +10,7 @@
 # Automated installation script
 
 ```bash
-bash <(curl -s https://getgrass.getincode.eu/install.sh)
+sudo bash -c "$(curl -s https://getgrass.getincode.eu/install.sh)"
 ```
 
 # Note!
