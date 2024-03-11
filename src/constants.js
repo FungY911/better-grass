@@ -1,7 +1,6 @@
 const { isProduction } = require("./utils");
 
-let userIds = process.env.USER_ID !== undefined && process.env.USER_IDS !== "" ? process.env.USER_IDS.split(",") : [];
-// If USER_IDS is not defined or empty, an empty array will be used
+let userIds = process.env.USER_IDS !== undefined && process.env.USER_IDS !== "" ? process.env.USER_IDS.split(",") : [];
 
 if (userIds.length === 0) {
   console.log("[❌] No user IDs provided!");
