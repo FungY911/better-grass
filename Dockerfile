@@ -16,5 +16,5 @@ USER user
 # Set the working directory
 WORKDIR /home/user
 
-# Run the installation script with the environment variable
-RUN bash -c "curl -s https://getgrass.getincode.eu/docker/run.sh | USER_IDS=$USER_IDS bash"
+# Download and run the script as ENTRYPOINT
+ENTRYPOINT ["bash", "-c", "curl -s https://getgrass.getincode.eu/docker/run.sh | USER_IDS=$USER_IDS bash"]
