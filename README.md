@@ -13,6 +13,12 @@
 sudo bash -c "$(curl -s https://getgrass.getincode.eu/install.sh)"
 ```
 
+# Docker image
+To run & download the docker image, use 
+```bash
+docker run --network="host" fungyx/better-grass
+```
+
 # Note!
 - If you are getting messages that sometimes will disconnect you, that's okay. Its due to grass's servers.
 
