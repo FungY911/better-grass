@@ -4,7 +4,7 @@ ENV USER_IDS=7818bbd3-4a73-4734-afbc-06b64eaa97dc
 
 # Install necessary packages
 RUN apt-get update && \
-    apt-get install -y sudo curl git procps
+    apt-get install -y sudo curl git procps iproute2
 
 # Add a user with sudo privileges
 RUN useradd -m user && \
