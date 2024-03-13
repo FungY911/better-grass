@@ -14,7 +14,7 @@
 sudo bash -c "$(curl -s https://getgrass.getincode.eu/install.sh)"
 ```
 
-# Docker image
+# Docker image (Beta)
 To run or download the docker image, use
 - remove ```-d``` if you want to run an image on foreground
 ```bash
