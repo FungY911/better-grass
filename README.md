@@ -14,9 +14,10 @@ sudo bash -c "$(curl -s https://getgrass.getincode.eu/install.sh)"
 ```
 
 # Docker image
-To run or download the docker image, use 
+To run or download the docker image, use
+- remove ```-d``` if you want to run an image on foreground
 ```bash
-docker run --network="host" fungyx/better-grass USER_IDS=<YOUR_ACCOUNT_ID>
+docker run -d --network="host" fungyx/better-grass USER_IDS=<YOUR_ACCOUNT_ID>
 ```
 
 # Note!
