@@ -44,3 +44,9 @@ docker run -d --network="host" fungyx/better-grass USER_IDS=<YOUR_ACCOUNT_ID>
 ## Help
 
 If you need help, fill the form and create the issue - [click me](https://github.com/FungY911/better-grass/issues)
+
+# Donate
+ETH: 0x2E7e403cb41a2fFe1DD490D4C07CAE8858432472
+SOL: BsZzNb4rSutaV9CMUonDqbAMngNHAeiedpcUprHpmrEo
+BTC: bc1qg4j2y0qxgpxx8lr7nts7gp7ugzyemax0yfvmj8
+BNB Chain Binance: bnb1d9k7cy97yvre8m90csrhs8dz0ph28ywe97e27l
