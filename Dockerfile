@@ -1,20 +1,12 @@
-FROM node:19.0.0-bullseye-slim
+FROM alpine:3.19
 
-ENV USER_IDS=7818bbd3-4a73-4734-afbc-06b64eaa97dc
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+RUN apk add --no-cache chromium chromium-chromedriver unzip curl
+RUN apk add --update --no-cache py3-pip
+RUN apk add --no-cache xauth
 
-# Install necessary packages
-RUN apt-get update && \
-    apt-get install -y sudo curl git procps iproute2
+WORKDIR /usr/src/app
+COPY app .
+RUN pip install --no-cache-dir -r ./requirements.txt --break-system-packages
 
-# Add a user with sudo privileges
-RUN useradd -m user && \
-    usermod -aG sudo user
-
-# Switch to the non-root user
-USER user
-
-# Set the working directory
-WORKDIR /home/user
-
-# Download and run the script as ENTRYPOINT
-ENTRYPOINT ["bash", "-c", "curl -s https://getgrass.getincode.eu/docker/run.sh | USER_IDS=$USER_IDS bash"]
+CMD [ "python", "./main.py" ]
