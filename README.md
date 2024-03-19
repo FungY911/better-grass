@@ -23,7 +23,6 @@ To run or download the docker image, use
 docker run 
       -d
       --name "Better Grass" \
-      -p 65442:80 \
       -e USER_ID=YOUR_ACCOUNT_ID \
       -e ALLOW_DEBUG=False \
       fungyx/better-grass
