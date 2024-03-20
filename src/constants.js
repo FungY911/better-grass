@@ -1,15 +1,15 @@
 const { isProduction } = require("./utils");
 
-let userIds = process.env.USER_IDS !== undefined && process.env.USER_IDS !== "" ? process.env.USER_IDS.split(",") : [];
+let userId = process.env.USER_ID;
 
-if (userIds.length === 0) {
-  console.log("[❌] No user IDs provided!");
-  console.log("[❗] Please set the USER_IDS environment variable.");
+if (userId.length === 0) {
+  console.log("[❌] No USER_ID provided!");
+  console.log("[❗] Please set the USER_ID environment variable.");
   process.exit(1);
 }
 
 module.exports = {
-  USER_IDS: userIds,
+  USER_ID: userId,
   WEBSOCKET_URLS: isProduction()
     ? ["wss://proxy.wynd.network:4650", "wss://proxy.wynd.network:4444"]
     : ["ws://proxy.dev.getgrass.io:4343"],

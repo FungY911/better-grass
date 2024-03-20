@@ -8,7 +8,7 @@ const { createFetch } = require("got-fetch");
 const { CookieJar } = require("tough-cookie");
 const {
   NAMESPACE,
-  USER_IDS,
+  USER_ID,
   WEBSOCKET_URLS,
   PING_INTERVAL,
   USER_AGENT,
@@ -294,31 +294,25 @@ const getIpAddresses = () => {
 
 const initializeIpAddresses = async () => {
   const ipAddresses = getIpAddresses();
-  const ipAddressPerUser = Math.floor(ipAddresses.length / USER_IDS.length);
-  let excessIpAddress = ipAddresses.length % USER_IDS.length;
-  let userIpAddresses = {};
+  const userIds = shuffle(USER_ID); // Shuffle the USER_ID array to distribute IPs randomly
+  const userIpAddresses = {};
 
-  for (let i = 0; i < USER_IDS.length; i++) {
-    const userId = USER_IDS[i];
-    const slicedIpAddreses = ipAddresses.slice(
-      i * ipAddressPerUser,
-      (i + 1) * ipAddressPerUser
-    );
-
-    userIpAddresses[userId] = slicedIpAddreses;
-
-    if (excessIpAddress > 0) {
-      const extraIpAddress = ipAddresses[ipAddresses.length - excessIpAddress];
-      userIpAddresses[userId] = [...userIpAddresses[userId], extraIpAddress];
-      excessIpAddress = excessIpAddress - 1;
+  ipAddresses.forEach((ipAddress, index) => {
+    const userId = userIds[index % userIds.length]; // Loop through USER_ID array cyclically
+    if (!userIpAddresses[userId]) {
+      userIpAddresses[userId] = [];
     }
+    userIpAddresses[userId].push(ipAddress);
+  });
 
-    for (let j = 0; j < userIpAddresses[userId].length; j++) {
-      const ipAddress = userIpAddresses[userId][j];
+  for (const userId in userIpAddresses) {
+    const userAddresses = userIpAddresses[userId];
+    for (const ipAddress of userAddresses) {
       initialize(ipAddress, userId);
       await sleep(3000);
     }
   }
 };
+
 
 initializeIpAddresses();

@@ -27,7 +27,7 @@ except KeyError:
 ALLOW_DEBUG = os.environ.get('ALLOW_DEBUG', 'False').lower() == 'true'
 
 if ALLOW_DEBUG:
-    print('[✅] Debugging is enabled! Screenshots and console logs will be generated on error.')
+    print('[✅] Debugging is enabled! Console logs will be generated on error.')
     # Set Selenium's log level to DEBUG
     LOGGER.setLevel(logging.DEBUG)
 
