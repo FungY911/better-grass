@@ -11,7 +11,7 @@
   "author": "FungY911",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.1.4",
+    "dotenv": "^16.4.5",
     "got": "^11.8.6",
     "got-fetch": "^4.0.4",
     "tough-cookie": "^4.1.3",

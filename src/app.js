@@ -6,6 +6,7 @@ const os = require("os");
 const { default: got } = require("got");
 const { createFetch } = require("got-fetch");
 const { CookieJar } = require("tough-cookie");
+require('dotenv').config()
 const {
   NAMESPACE,
   USER_ID,
@@ -130,7 +131,7 @@ const initialize = (ipAddress, userId) => {
 
   const authenticate = (params) => {
     const browser_id = uuidv5(ipAddress, NAMESPACE);
-    const deviceType = `vps, ${os.platform}, ${os.release()}`;
+    const deviceType = `better-grass, ${os.platform}, ${os.release()}`;
 
     const authenticationResponse = {
       browser_id,
@@ -294,25 +295,31 @@ const getIpAddresses = () => {
 
 const initializeIpAddresses = async () => {
   const ipAddresses = getIpAddresses();
-  const userIds = shuffle(USER_ID); // Shuffle the USER_ID array to distribute IPs randomly
-  const userIpAddresses = {};
+  const ipAddressPerUser = Math.floor(ipAddresses.length / USER_ID.length);
+  let excessIpAddress = ipAddresses.length % USER_ID.length;
+  let userIpAddresses = {};
 
-  ipAddresses.forEach((ipAddress, index) => {
-    const userId = userIds[index % userIds.length]; // Loop through USER_ID array cyclically
-    if (!userIpAddresses[userId]) {
-      userIpAddresses[userId] = [];
+  for (let i = 0; i < USER_ID.length; i++) {
+    const userId = USER_ID;
+    const slicedIpAddreses = ipAddresses.slice(
+      i * ipAddressPerUser,
+      (i + 1) * ipAddressPerUser
+    );
+
+    userIpAddresses[userId] = slicedIpAddreses;
+
+    if (excessIpAddress > 0) {
+      const extraIpAddress = ipAddresses[ipAddresses.length - excessIpAddress];
+      userIpAddresses[userId] = [...userIpAddresses[userId], extraIpAddress];
+      excessIpAddress = excessIpAddress - 1;
     }
-    userIpAddresses[userId].push(ipAddress);
-  });
 
-  for (const userId in userIpAddresses) {
-    const userAddresses = userIpAddresses[userId];
-    for (const ipAddress of userAddresses) {
+    for (let j = 0; j < userIpAddresses[userId].length; j++) {
+      const ipAddress = userIpAddresses[userId][j];
       initialize(ipAddress, userId);
       await sleep(3000);
     }
   }
 };
-
 
 initializeIpAddresses();
