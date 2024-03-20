@@ -40,7 +40,7 @@ docker run
 
 ![image](https://github.com/FungY911/better-grass/assets/74965749/0b8b31b7-57d8-49d2-b945-31b895a49e62)
 
-1. Click on https://app.getgrass.io/
+1. Click on grass dashboard
 2. Click on key userId
 3. Copy the value - This is your userId
 
