@@ -15,12 +15,13 @@ sudo bash -c "$(curl -s https://getgrass.getincode.eu/install.sh)"
 ```
 
 # Docker image (Beta)
+
 To run or download the docker image, use
 
 - remove `-d` if you want to run an image on foreground
 
 ```bash
-docker run 
+docker run
       -d
       --name "Better Grass" \
       -e USER_ID=YOUR_ACCOUNT_ID \
@@ -36,13 +37,18 @@ docker run
 
 0. Open inspector by right click or press F12 on app.getgrass.io
 1. Go to Application, If you dont see them, resize the window or click on the arrows pointing to the right, upper in the inspector
-</br>
+   </br>
 
 ![image](https://github.com/FungY911/better-grass/assets/74965749/0b8b31b7-57d8-49d2-b945-31b895a49e62)
 
-1. Click on grass dashboard
+1. Click on https://app.getgrass.io/
 2. Click on key userId
 3. Copy the value - This is your userId
+
+## Useful links
+
+- [Grass landing page](https://www.getgrass.io)
+- [Grass dashboard](https://app.getgrass.io/register/?referralCode=7WfvhuMPb4I1plY)
 
 ## Help
 
