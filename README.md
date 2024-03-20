@@ -52,14 +52,3 @@ docker run
 ## Help
 
 If you need help, fill the form and create the issue - [click me](https://github.com/FungY911/better-grass/issues)
-
-# Donate
-We do not support deposits from smart contracts. 
-</br>
-ETH: 0xF544986F6015c14DEeb62ebe02A3c865DeBdd406
-</br>
-SOL: 9TsuuRP6p95Lv7roTfkW7DAVvuRZ9HR5jeUcc7acZpKY
-</br>
-BTC: 1JbeWRr4A2shrkNEBcaJ1wutT1R6k9Hy56
-</br>
-DOGE: DQz5T2sD4c8NvZzXw4ZUKZyzYeJWaZPVsQ
