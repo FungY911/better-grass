@@ -44,11 +44,6 @@ docker run
 2. Click on key userId
 3. Copy the value - This is your userId
 
-## Useful links
-
-- [Grass landing page](https://www.getgrass.io)
-- [Grass dashboard](https://app.getgrass.io/register/?referralCode=7WfvhuMPb4I1plY)
-
 ## Help
 
 If you need help, fill the form and create the issue - [click me](https://github.com/FungY911/better-grass/issues)
