@@ -4,7 +4,7 @@ require("dotenv").config();
 module.exports = {
   apps: [
     {
-      name: "grass-cli",
+      name: "better-grass",
       script: "./src/app.js",
       node_args: ["--max-http-header-size=1073741824"],
       env: {
