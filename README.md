@@ -21,12 +21,7 @@ To run or download the docker image, use
 - remove `-d` if you want to run an image on foreground
 
 ```bash
-docker run
-      -d
-      --name "Better Grass" \
-      -e USER_ID=YOUR_ACCOUNT_ID \
-      -e ALLOW_DEBUG=False \
-      fungyx/better-grass
+docker run -d --name "Better Grass" -e USER_ID=YOUR_ACCOUNT_ID -e ALLOW_DEBUG=False fungyx/better-grass
 ```
 
 # Note!
