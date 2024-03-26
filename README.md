@@ -24,6 +24,20 @@ To run or download the docker image, use
 docker run -d --name "Better Grass" -e USER_ID=YOUR_ACCOUNT_ID -e ALLOW_DEBUG=False fungyx/better-grass
 ```
 
+# Build Docker image (Beta)
+- After building you can remove better-grass directory by `rm -rf ../better-grass` in better-grass directory.
+- Types of platforms: `linux/amd64`, `linux/arm64`, `linux/arm/v7`
+
+```bash
+$ apt-get install git -y
+$ git clone https://github.com/FungY911/better-grass
+$ cd better-grass
+```
+#2 Build the image
+```bash
+docker build --network host -t fungyx/better-grass --platform=YOUR_PLATFORM .
+```
+
 # Note!
 
 - If you are getting messages that sometimes will disconnect you, that's okay. Its due to grass's servers.
