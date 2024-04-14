@@ -1,3 +1,4 @@
+console.log("[❗] Initializing...");
 const WebSocket = require("ws");
 const { v5: uuidv5, v4: uuidv4 } = require("uuid");
 const fs = require("fs");
@@ -29,7 +30,6 @@ const sleep = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-console.log("[❗] Initializing...");
 const performHttpRequest = async (params) => {
   const sessionHasCookieJar = !!cookieJars[params.session_id];
 
@@ -295,24 +295,17 @@ const getIpAddresses = () => {
 
 const initializeIpAddresses = async () => {
   const ipAddresses = getIpAddresses();
-  const ipAddressPerUser = Math.floor(ipAddresses.length / USER_ID.length);
-  let excessIpAddress = ipAddresses.length % USER_ID.length;
+  const userId = USER_ID;
+  const ipAddressPerUser = Math.floor(ipAddresses.length);
   let userIpAddresses = {};
 
-  for (let i = 0; i < USER_ID.length; i++) {
-    const userId = USER_ID;
+  for (let i = 0; i < 1; i++) { // Loop only once since there's only one user
     const slicedIpAddreses = ipAddresses.slice(
       i * ipAddressPerUser,
       (i + 1) * ipAddressPerUser
     );
 
     userIpAddresses[userId] = slicedIpAddreses;
-
-    if (excessIpAddress > 0) {
-      const extraIpAddress = ipAddresses[ipAddresses.length - excessIpAddress];
-      userIpAddresses[userId] = [...userIpAddresses[userId], extraIpAddress];
-      excessIpAddress = excessIpAddress - 1;
-    }
 
     for (let j = 0; j < userIpAddresses[userId].length; j++) {
       const ipAddress = userIpAddresses[userId][j];
@@ -321,5 +314,6 @@ const initializeIpAddresses = async () => {
     }
   }
 };
+
 
 initializeIpAddresses();

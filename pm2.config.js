@@ -8,7 +8,7 @@ module.exports = {
       script: "./src/app.js",
       node_args: ["--max-http-header-size=1073741824"],
       env: {
-        USER_IDS: process.env.USER_IDS,
+        USER_ID: process.env.USER_ID,
         LIMIT: process.env.LIMIT,
         NODE_ENV: process.env.NODE_ENV,
       },

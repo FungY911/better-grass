@@ -95,8 +95,6 @@ local_storage_data = {
 }
 
 if "chrome-extension" in driver.current_url:
-    print("Active page URL:", driver.current_url)
-
     # Convert local_storage_data to JSON string
     json_data = json.dumps(local_storage_data)
 

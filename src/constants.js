@@ -1,7 +1,7 @@
 const { isProduction } = require("./utils");
 
 let userId = process.env.USER_ID ?? undefined;
-
+console.log("USER ID: ", userId)
 if (userId === undefined) {
   console.log("[❌] No USER_ID provided!");
   console.log("[❗] Please set the USER_ID environment variable.");
